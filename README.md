@@ -15,7 +15,7 @@ https://classroom.google.com/u/1/c/NTk2OTUyMzE0MTgy
 | 03 - Sudoku |  |  | 28/04/2023 |
 | 04 - Threads |  |  | 12/05/2023 |
 | 05 - Web |  |  | 26/05/2023 |
-| Final |  | 23/06/2023 |
+| Final |  |  | 23/06/2023
 
 
 ## Git basics
