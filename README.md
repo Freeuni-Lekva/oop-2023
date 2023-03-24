@@ -19,4 +19,6 @@ https://classroom.google.com/u/1/c/NTk2OTUyMzE0MTgy
 
 
 ## Git basics
-შემდეგი დოკუმენტი აგიხსნით Git-ის საწყისებს და როგორ გამოიყენოთ ის დავალებების ჩასაბარებლად: https://docs.google.com/document/d/1cpRxmGSkNf-7ynzIr1Bl-NAxfACJH5YjsLbVA4CzSCY/edit#
+შემდეგი დოკუმენტები აგიხსნით Git-ის საწყისებს და როგორ გამოიყენოთ ის დავალებების ჩასაბარებლად:
+https://docs.google.com/document/d/1bQOfcLp23o-F3GR5l-ccrXNwJRv7JXRLBGIMcEh0t94/edit?usp=sharing
+https://docs.google.com/document/d/1cpRxmGSkNf-7ynzIr1Bl-NAxfACJH5YjsLbVA4CzSCY/edit#
