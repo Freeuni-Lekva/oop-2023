@@ -37,7 +37,7 @@ public class Node {
     @Override
     public String toString(){
         if (operation == '$') {
-            return "(" + value + ")";
+            return Double.toString(value);
         }
 
         if (!("+-*/".contains(operation + ""))) {

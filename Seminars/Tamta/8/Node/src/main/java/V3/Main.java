@@ -3,8 +3,11 @@ package V3;
 public class Main {
 
     public static void main(String[] args) {
-        Node a = new SumOperation( new ValueNode(1.0), new ValueNode(3));
-        System.out.println(a.evaluate());
-        System.out.println(a);
+        Node mul = new MultiplyOperation(new ValueNode(2.0), new ValueNode(3));
+        Node sum = new SumOperation(mul, new ValueNode(1));
+        System.out.println(mul.evaluate());
+        System.out.println(mul);
+        System.out.println(sum.evaluate());
+        System.out.println(sum);
     }
 }

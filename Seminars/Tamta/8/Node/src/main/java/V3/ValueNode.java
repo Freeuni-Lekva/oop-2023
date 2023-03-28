@@ -13,6 +13,6 @@ public class ValueNode extends Node{
 
     @Override
     public String toString() {
-        return "(" + value + ")";
+        return Double.toString(value);
     }
 }
