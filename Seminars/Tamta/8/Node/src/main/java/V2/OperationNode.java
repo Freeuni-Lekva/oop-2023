@@ -1,11 +1,9 @@
 package V2;
 
-import java.security.InvalidParameterException;
-
 public class OperationNode implements Node{
-    private char operation;
-    private Node left;
-    private Node right;
+    private final char operation;
+    private final Node left;
+    private final Node right;
 
     public OperationNode(char op, Node left, Node right){
         if (!("+*".contains(op + ""))) {
@@ -22,11 +20,11 @@ public class OperationNode implements Node{
 
     @Override
     public double evaluate() {
-        switch (operation){
-            case '+': return left.evaluate() + right.evaluate();
-            case '*': return left.evaluate() * right.evaluate();
-            default: throw new IllegalArgumentException();
-        }
+        return switch (operation) {
+            case '+' -> left.evaluate() + right.evaluate();
+            case '*' -> left.evaluate() * right.evaluate();
+            default -> throw new IllegalArgumentException();
+        };
     }
 
     @Override

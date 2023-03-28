@@ -1,7 +1,7 @@
 package V3;
 
 public class ValueNode extends Node{
-    private double value;
+    private final double value;
 
     public ValueNode(double value){
         this.value = value;

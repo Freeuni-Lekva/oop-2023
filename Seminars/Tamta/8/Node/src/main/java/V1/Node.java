@@ -4,7 +4,7 @@ import java.security.InvalidParameterException;
 
 public class Node {
     private double value;
-    private char operation;
+    private final char operation;
     private Node left;
     private Node right;
 
@@ -24,20 +24,20 @@ public class Node {
     }
 
     public double evaluate(){
-        switch (operation) {
-            case '$': return value;
-            case '+': return left.evaluate() + right.evaluate();
-            case '*': return left.evaluate() * right.evaluate();
-            case '-': return left.evaluate() - right.evaluate();
-            case '/': return left.evaluate() / right.evaluate();
-            default: throw new InvalidParameterException();
-        }
+        return switch (operation) {
+            case '$' -> value;
+            case '+' -> left.evaluate() + right.evaluate();
+            case '*' -> left.evaluate() * right.evaluate();
+            case '-' -> left.evaluate() - right.evaluate();
+            case '/' -> left.evaluate() / right.evaluate();
+            default -> throw new InvalidParameterException();
+        };
     }
 
     @Override
     public String toString(){
         if (operation == '$') {
-            return "(" + Double.toString(value) + ")";
+            return "(" + value + ")";
         }
 
         if (!("+-*/".contains(operation + ""))) {
