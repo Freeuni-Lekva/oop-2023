@@ -3,10 +3,12 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class SwingView {
-
+public class SwingView implements CalcView, DisplayListener{
+    InputListener inputListener;
+    JFrame frame;
+    JTextField inputField;
     public SwingView() {
-        JFrame frame = new JFrame();
+        frame = new JFrame();
         frame.setSize(new Dimension(300, 300));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -15,7 +17,8 @@ public class SwingView {
 
         // panel for rendering input/output numbers
         JPanel inputPanel = new JPanel(new BorderLayout());
-        JTextField inputField = new JTextField();
+        inputField = new JTextField();
+        inputField.setEditable(false);
         inputPanel.add(inputField);
 
         // digits buttons
@@ -36,7 +39,6 @@ public class SwingView {
         frame.add(inputPanel, BorderLayout.NORTH);
         frame.add(digitsPanel, BorderLayout.CENTER);
         frame.add(commandsPanel, BorderLayout.EAST);
-        frame.setVisible(true);
     }
 
     private JButton addButton(String text) {
@@ -45,11 +47,32 @@ public class SwingView {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 System.out.println(actionEvent.getActionCommand());
+                fireInputReceived(actionEvent.getActionCommand());
             }
         });
         return button;
     }
 
+    @Override
+    public void show() {
+        frame.setVisible(true);
+    }
+
+    @Override
+    public void registerInputListener(InputListener inputListener) {
+        this.inputListener = inputListener;
+    }
+
+    @Override
+    public void fireInputReceived(String input) {
+        inputListener.inputReceived(input);
+    }
+
+
+    @Override
+    public void displayChanged(String display) {
+        inputField.setText(display);
+    }
 }
 
 
