@@ -45,6 +45,21 @@ public class SwingView {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 System.out.println("filter");
+
+                // get filtered students from db
+                AndFilter andFilter = new AndFilter();
+
+                Filter firstNameFilter = new FirstNameFilter(firstNameFilterField.getText());
+                Filter lastNameFilter = new LastNameFilter(lastNameFilterField.getText());
+                if (yearFilterField.getText().length() > 0) {
+                    Filter yearFilter = new YearFilter(Integer.parseInt(yearFilterField.getText()));
+                    andFilter.addFilter(yearFilter);
+                }
+                andFilter.addFilter(firstNameFilter);
+                andFilter.addFilter(lastNameFilter);
+
+                // update view
+                model.setStudents(store.filter(andFilter));
             }
         });
 

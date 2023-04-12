@@ -15,4 +15,16 @@ public class StudentsStore {
     public List<Student> getStudents() {
         return students;
     }
+
+    public List<Student> filter(Filter filter) {
+        List<Student> filteredStudents = new ArrayList<>();
+        for (Student student: students) {
+            if (filter.filter(student)) {
+                filteredStudents.add(student);
+            }
+        }
+        return filteredStudents;
+    }
+
+
 }
