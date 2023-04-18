@@ -35,7 +35,7 @@ public class Main {
         System.out.println("\nStudent with id=3:");
         System.out.println(gson.toJson(studentDAO.getStudentById(3)));
 
-        System.out.println(studentDAO.bla("1; drop table student_courses;"));
+        System.out.println(studentDAO.sql_injection("1; drop table student_courses;"));
 
     }
 }

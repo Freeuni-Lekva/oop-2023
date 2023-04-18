@@ -57,10 +57,13 @@ public class StudentDAO {
         return null;
     }
 
-    public Student bla(String a) {
+    public Student sql_injection(String a) {
         try {
             Connection connection = dataSource.getConnection();
-            PreparedStatement statement = connection.prepareStatement("select * from students where student_id = " + a);
+
+            Statement statement = connection.createStatement();
+//            String b = "1; drop table student_courses";
+            statement.execute("select * from students where student_id = " + a);
 //            ResultSet result = statement.executeQuery();
 //            while (result.next()) {
 //                return addStudent(result);
