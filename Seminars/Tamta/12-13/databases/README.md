@@ -1,14 +1,6 @@
----
-nav_order: 11
-title: 11-12. ბაზასთან დაკავშირება
-parent: გვანცა
-grand_parent: სემინარები
----
-
 ბაზაში გვაქვს შენახული ინფორმაცია კურსების და სტუდენტების შესახებ და უნდა შეგვეძლოს ამ ინფორმაციის წამოღება და დაბეჭდვა.
 
 - Students:
-
   - id
   - idNumber
   - firstName
@@ -23,8 +15,8 @@ grand_parent: სემინარები
   - courseType
   - students
 
-ბაზის შესაქმნელად და ინფორმაციის წამოსაღებად საჭირო ქომანდები შეგიძლიათ ნახოთ [აქ](https://github.com/Freeuni-Lekva/oop-2021/tree/main/Content/Seminars/Gvantsa/11-12/db.sql)
+ბაზის შესაქმნელად და ინფორმაციის წამოსაღებად საჭირო ქომანდები შეგიძლიათ ნახოთ db.sql-ში
+პროექტის ყოველ ჯერზე ჩართვისას არ დაგავიწყდეთ use test_4;-ის გაშვება
 
-კოდი შეგიძლიათ ნახოთ [აქ](https://github.com/Freeuni-Lekva/oop-2021/tree/main/Content/Seminars/Gvantsa/11-12)
-
-საჭირო ბიბლიოთეკები (`jar` ფაილები) შეგიძლიათ იპოვოთ ინტერნეტში ან [აქ](https://github.com/Freeuni-Lekva/oop-2021/tree/main/Content/Seminars/Gvantsa/11-12/lib)
+საჭირო ბიბლიოთეკები (`jar` ფაილები) შეგიძლიათ იპოვოთ ინტერნეტში ან lib ფოლდერში
+მათი IntelliJ-ში dependency-ებად დამატება იხილეთ [აქ](https://www.jetbrains.com/help/idea/working-with-module-dependencies.html)
