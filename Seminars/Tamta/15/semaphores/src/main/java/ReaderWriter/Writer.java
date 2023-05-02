@@ -1,10 +1,12 @@
+package ReaderWriter;
+
 import java.util.ArrayList;
 import java.util.concurrent.Semaphore;
 
 public class Writer implements Runnable{
-    private ArrayList<Character> buffer;
-    private Semaphore sem;
-    private int BUFFER_SIZE;
+    private final ArrayList<Character> buffer;
+    private final Semaphore sem;
+    private final int BUFFER_SIZE;
 
     public Writer(ArrayList<Character> buffer, Semaphore sem, int BUFFER_SIZE) {
         this.buffer = buffer;

@@ -63,6 +63,7 @@ public class StudentDAO {
 
             Statement statement = connection.createStatement();
 //            String b = "1; drop table student_courses";
+            // BAD CODE. NEVER DO THIS.
             statement.execute("select * from students where student_id = " + a);
 //            ResultSet result = statement.executeQuery();
 //            while (result.next()) {

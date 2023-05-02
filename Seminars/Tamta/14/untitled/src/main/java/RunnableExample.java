@@ -25,7 +25,9 @@ class Main {
 
         try {
             th1.join();
+            System.out.println("Main alive 1");
             th2.join();
+            System.out.println("Main alive 2");
             th3.join();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);

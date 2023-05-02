@@ -1,8 +1,7 @@
+package ReaderWriter;
+
 import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.Semaphore;
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.ReentrantLock;
 
 public class Main {
     final static int BUFFER_SIZE = 10;
