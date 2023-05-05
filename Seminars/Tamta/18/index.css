@@ -1,0 +1,9 @@
+h1 {
+    font-size: 100px;
+    color: blueviolet;
+}
+
+#student-table {
+    width: 80%;
+    background-color:darkseagreen;
+}
