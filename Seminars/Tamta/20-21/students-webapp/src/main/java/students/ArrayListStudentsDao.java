@@ -28,5 +28,15 @@ public class ArrayListStudentsDao implements StudentsDao {
     public List<Student> getAll() {
         return Collections.unmodifiableList(students);
     }
+
+    @Override
+    public List<Student> getFiltered(Filter filter) {
+        ArrayList<Student> filteredStudents = new ArrayList<>();
+        for (Student student: students) {
+            if (filter.filter(student))
+                filteredStudents.add(student);
+        }
+        return filteredStudents;
+    }
 }
 

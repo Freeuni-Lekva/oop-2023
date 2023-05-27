@@ -9,6 +9,18 @@ import java.io.IOException;
 public class StudentsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
+        AndFilter filterAll = new AndFilter();
+        if (httpServletRequest.getParameter("first-name-filter") != null) {
+            filterAll.addFilter(
+                    new FirstNameFilter(httpServletRequest.getParameter("first-name-filter"))
+            );
+        }
+        if (httpServletRequest.getParameter("last-name-filter") != null) {
+            filterAll.addFilter(
+                    new LastNameFilter(httpServletRequest.getParameter("last-name-filter"))
+            );
+        }
+        httpServletRequest.setAttribute("filter", filterAll);
         httpServletRequest.getRequestDispatcher("student.jsp").forward(httpServletRequest, httpServletResponse);
 
     }

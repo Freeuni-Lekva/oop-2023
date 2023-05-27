@@ -1,5 +1,6 @@
 <%@ page import="students.StudentsDao" %>
-<%@ page import="students.Student" %><%--
+<%@ page import="students.Student" %>
+<%@ page import="students.AndFilter" %><%--
   Created by IntelliJ IDEA.
   User: tamta
   Date: 19.05.23
@@ -13,6 +14,12 @@
 </head>
 <body>
     <div class="container">
+        <form id="filter" method="get" action="student">
+            <input type="text" placeholder="First Name Filter" name="first-name-filter">
+            <input type="text" placeholder="Last Name Filter" name="last-name-filter">
+            <input type="text" placeholder="Year Filter" name="year-filter">
+            <input type="submit" value="Filter" id="Filter button">
+        </form>
         <form id="form" method="post" action="student">
             <input type="text" placeholder="First Name" name="first-name">
             <input type="text" placeholder="Last Name" name="last-name">
@@ -27,7 +34,7 @@
                 <th>Year</th>
             </tr>
             <%
-                for (Student student: ((StudentsDao)application.getAttribute("store")).getAll()) {
+                for (Student student: ((StudentsDao)application.getAttribute("store")).getFiltered((AndFilter)request.getAttribute("filter"))) {
             %>
             <tr>
                 <td> <%= student.getFirstName() %> </td>

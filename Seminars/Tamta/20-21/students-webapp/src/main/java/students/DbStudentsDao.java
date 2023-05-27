@@ -61,4 +61,33 @@ public class DbStudentsDao implements StudentsDao{
         return students;
     }
 
+    @Override
+    public List<Student> getFiltered(Filter filter) {
+        ArrayList<Student> students = new ArrayList<>();
+        try {
+            Connection connection = dataSource.getConnection();
+            Statement statement = connection.createStatement();
+
+            String whereClause = "";
+            if (!filter.format().equals("")) {
+                whereClause = "WHERE " + filter.format();
+            }
+            System.out.println(whereClause);
+            ResultSet result = statement.executeQuery("select * from students " + whereClause + ";");
+            while (result.next()) {
+                Student student = new Student(
+                        result.getString("firstname"),
+                        result.getString("lastname"),
+                        10
+                );
+                students.add(student);
+            }
+            System.out.println(filter.format());
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return students;
+    }
+
 }
